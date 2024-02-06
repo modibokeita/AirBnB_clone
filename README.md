@@ -1,5 +1,7 @@
-##The AirBnB clone project for team of two people
 # Description of the project
+
+# The AirBnB clone project for team of two people
+
 The AirBnB clone project is about to build a web application 
 the first version of this project is console mode interactive
 
