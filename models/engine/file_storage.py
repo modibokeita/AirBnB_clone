@@ -4,8 +4,9 @@
 file storage model
 """
 import json
-from  os.path import exists
+from os.path import exists
 from models.base_model import BaseModel
+
 
 class FileStorage:
 
@@ -21,7 +22,7 @@ class FileStorage:
 
     def all(self):
         """
-        the method all return 
+        the method all return
         the method in fileStorage class
         """
         return FileStorage.__objects
@@ -30,7 +31,7 @@ class FileStorage:
 
         """
         the method new sets new object
-        and return that object with 
+        and return that object with
         and id on it
         """
         obj_class_name = obj.__class__.__name__
@@ -47,7 +48,7 @@ class FileStorage:
         all_bjs = FileStorage.__objects
         serialized_obj = {}
 
-        for key in  all_bjs.keys():
+        for key in all_bjs.keys():
             serialized_obj[key] = all_bjs[key].to_dict()
 
         with open(FileStorage.__file_path, "w", encoding="utf-8") as file:
@@ -57,13 +58,13 @@ class FileStorage:
     def reload(self):
         """
         the reload method loads file has been
-        deserialized that can be able 
+        deserialized that can be able
         to be readed
         """
         if exists(FileStorage.__file_path):
 
             with open(FileStorage.__file_path, "r", encoding="utf-8") as file:
-                
+
                 try:
                     load_file = json.load(file)
 
