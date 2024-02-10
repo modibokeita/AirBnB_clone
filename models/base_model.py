@@ -14,6 +14,10 @@ class BaseModel:
     """
     def __init__(self, *args, **kwargs):
         formated_time = "%Y-%m-%dT%H:%M:%S.%f"
+        self.id = str(uuid4())
+        self.created_at = datetime.now()
+        self.updated_at = datetime.now()
+
         if kwargs:
             for key, value in kwargs.items():
                 if key == "__build_class__":
@@ -23,10 +27,7 @@ class BaseModel:
                     setattr(self, key, datetime.strptime(value, formated_time))
                 else:
                     setattr(self, key, value)
-        else:
-            self.id = str(uuid4())
-            self.created_at = datetime.now()
-            self.updated_at = datetime.now()
+
         models.storage.new(self)
 
     def save(self):
