@@ -17,7 +17,6 @@ class TestCity(unittest.TestCase):
     """
     test_file = "test_file.json"
 
-    
     def setUp(sef):
         """
         create a temporary file for
@@ -62,7 +61,7 @@ class TestCity(unittest.TestCase):
         test_city.state_id = "Bko223"
 
         city_str = str(test_city)
-        self.assertIn("City",test_city)
+        self.assertIn("City", test_city)
         self.assertIn("Bamako", test_city)
         self.assertIn("Bko223", test_city)
 

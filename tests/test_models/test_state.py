@@ -9,7 +9,7 @@ User test Module
 """
 
 
-class TestUser(unittest.TestCase):
+class TestState(unittest.TestCase):
     """
     set up all possible cases
     for State model
@@ -22,7 +22,6 @@ class TestUser(unittest.TestCase):
         user data to be able be saved
         on file
         """
-        #self.test_file = "test_file.json"
         models.storage.__file_path = self.test_file
         models.storage.save()
 
