@@ -12,5 +12,5 @@ class City(BaseModel):
     to access the BaseModel class
     attributes
     """
-    state_id = State.id
+    state_id = ""
     name = ""
